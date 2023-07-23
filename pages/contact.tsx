@@ -54,11 +54,11 @@ export default function Contact({ session }: HomeProps) {
 
   return (
     <>
-      <Head>
-        <title>DocMyCode</title>
+       <Head>
+       <title>DocMyCode - Code Documentation Made Easy</title>
         <meta
           name="description"
-          content="Easily create, manage, and share code documentation in one place. DocMyCode lets you explain your code and keep your documentation up-to-date."
+          content="Easily create, manage, and share code documentation in one place. DocMyCode (Document my Code) lets you explain your code and keep your documentation up-to-date."
         />
         <meta
           property="og:title"
@@ -66,7 +66,11 @@ export default function Contact({ session }: HomeProps) {
         />
         <meta
           property="og:description"
-          content="Easily create, manage, and share code documentation in one place. DocMyCode lets you explain your code and keep your documentation up-to-date."
+          content="Easily create, manage, and share code documentation in one place. DocMyCode (Document my Code) lets you explain your code and keep your documentation up-to-date."
+        />
+        <meta
+          name="keywords"
+          content="code documentation, document my code, programming, coding, API documentation, inline comments, docstrings, code block comments, code explanations, coding best practices"
         />
       </Head>
       <Navbar session={session} />
@@ -121,7 +125,7 @@ export default function Contact({ session }: HomeProps) {
           <div className="relative w-full">
             <textarea
               id="message"
-              rows="6"
+              rows={6}
               maxLength={1000}
               className="block p-2.5 w-full text-2xl text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
               placeholder="Leave a comment..."

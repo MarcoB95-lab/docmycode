@@ -5,7 +5,7 @@ const Footer = () => {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
   return (
-    <footer className="fixed bottom-0 left-0 right-0 bg-transparent py-4 flex justify-between items-center px-5">
+    <footer className="bg-transparent fixed bottom-0 left-0 right-0 py-4 flex justify-between items-center px-5">
       <div className="text-black text-sm">
         © {currentYear} DocMyCode
       </div>

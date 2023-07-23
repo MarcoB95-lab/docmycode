@@ -12,6 +12,7 @@
   .custom-checkbox:checked {
     @apply bg-black border-black;
   }
+
 }
 
 

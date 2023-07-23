@@ -73,10 +73,10 @@ const Auth = () => {
   return (
     <>
       <Head>
-        <title>DocMyCode</title>
+      <title>DocMyCode - Code Documentation Made Easy</title>
         <meta
           name="description"
-          content="Easily create, manage, and share code documentation in one place. DocMyCode lets you explain your code and keep your documentation up-to-date."
+          content="Easily create, manage, and share code documentation in one place. DocMyCode (Document my Code) lets you explain your code and keep your documentation up-to-date."
         />
         <meta
           property="og:title"
@@ -84,7 +84,11 @@ const Auth = () => {
         />
         <meta
           property="og:description"
-          content="Easily create, manage, and share code documentation in one place. DocMyCode lets you explain your code and keep your documentation up-to-date."
+          content="Easily create, manage, and share code documentation in one place. DocMyCode (Document my Code) lets you explain your code and keep your documentation up-to-date."
+        />
+        <meta
+          name="keywords"
+          content="code documentation, document my code, programming, coding, API documentation, inline comments, docstrings, code block comments, code explanations, coding best practices"
         />
       </Head>
       <div className="min-h-screen bg-gradient-to-br from-start-gradient to-end-gradient flex items-center justify-center">
@@ -143,7 +147,7 @@ const Auth = () => {
           <div className="flex flex-col items-center gap-4 mt-4">
             <button
               onClick={() =>
-                signIn("google", { callbackUrl: "/api/auth/callback" })
+                signIn("google", { callbackUrl: "/" })
               }
               className="mt-4 flex items-center gap-2  text-gray-800 rounded-md text-xl shadow-md py-2 px-8"
             >

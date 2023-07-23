@@ -1,4 +1,4 @@
-import { getSession, useSession } from "next-auth/react";
+import { getSession } from "next-auth/react";
 import { Session } from "next-auth";
 import { NextPageContext } from "next";
 import Navbar from "@/components/navbar/Navbar";
@@ -8,8 +8,9 @@ import {
   SunIcon,
 } from "@heroicons/react/24/outline";
 import { useState } from "react";
-import Footer from "@/components/Footer";
 import Head from "next/head";
+import Link from "next/link";
+import Footer from "@/components/Footer";
 
 type HomeProps = {
   session: Session | null;
@@ -51,10 +52,10 @@ export default function Home({ session }: HomeProps) {
   return (
     <>
       <Head>
-        <title>DocMyCode</title>
+        <title>DocMyCode - Code Documentation Made Easy</title>
         <meta
           name="description"
-          content="Easily create, manage, and share code documentation in one place. DocMyCode lets you explain your code and keep your documentation up-to-date."
+          content="Easily create, manage, and share code documentation in one place. DocMyCode (Document my Code) lets you explain your code and keep your documentation up-to-date."
         />
         <meta
           property="og:title"
@@ -62,12 +63,16 @@ export default function Home({ session }: HomeProps) {
         />
         <meta
           property="og:description"
-          content="Easily create, manage, and share code documentation in one place. DocMyCode lets you explain your code and keep your documentation up-to-date."
+          content="Easily create, manage, and share code documentation in one place. DocMyCode (Document my Code) lets you explain your code and keep your documentation up-to-date."
+        />
+        <meta
+          name="keywords"
+          content="code documentation, document my code, programming, coding, API documentation, inline comments, docstrings, code block comments, code explanations, coding best practices"
         />
       </Head>
       <div className="min-h-screen bg-gradient-to-br from-start-gradient to-end-gradient">
         <Navbar session={session} />
-        <div className="flex flex-col items-center justify-center px-2 pt-20 h-screen">
+        <div className="flex flex-col items-center justify-center px-2 pt-40 ">
           <div className="flex flex-col items-center justify-center mb-20">
             <h3 className="text-5xl font-semibold mb-2 text-center">
               Welcome to DocMyCode.
@@ -76,13 +81,13 @@ export default function Home({ session }: HomeProps) {
               Easily create, manage, and share code documentation in one place.
             </p>
           </div>
-          <div className="flex flex-row justify-center w-full text-center">
+          <div className="flex flex-col justify-center w-full text-center md:flex-row">
             <div className="flex flex-col items-center justify-center mx-5">
               <div className="flex items-center justify-center mb-5">
                 <SunIcon className="h-10 w-10" />
                 <h2 className="ml-2"> How to use </h2>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 mb-5">
                 <p className="infoText">
                   Paste your code and select the desired documentation style by
                   checking the appropriate checkbox.
@@ -102,7 +107,7 @@ export default function Home({ session }: HomeProps) {
                 <BoltIcon className="h-10 w-10" />
                 <h2 className="ml-2"> Capabilities </h2>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 mb-5">
                 <p className="infoText">
                   Automatically generate inline comments, docstrings, and code
                   block comments for a variety of programming languages.
@@ -122,7 +127,7 @@ export default function Home({ session }: HomeProps) {
                 <ExclamationTriangleIcon className="h-10 w-10" />
                 <h2 className="ml-2"> Limitations </h2>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 mb-5">
                 <p className="infoText">
                   In some cases, generated information might be incorrect,
                   requiring manual review.
@@ -138,12 +143,12 @@ export default function Home({ session }: HomeProps) {
             </div>
           </div>
           <div className="flex flex-col justify-center mt-10">
-            <a
-              href="/test"
+            <Link
               className="hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+              href="/docmycode"
             >
               Get Started
-            </a>
+            </Link>
           </div>
           <h1 className="text-3xl font-bold mb-4 mt-10">
             DocMyCode Newsletter
@@ -159,7 +164,7 @@ export default function Home({ session }: HomeProps) {
           </div>
           <form
             onSubmit={handleSubscribe}
-            className="flex flex-row items-center gap-4 w-full max-w-md"
+            className="flex flex-row items-center gap-4 w-full max-w-md pb-20"
           >
             <div className="relative align-middle">
               <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -190,8 +195,8 @@ export default function Home({ session }: HomeProps) {
             </button>
           </form>
         </div>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }

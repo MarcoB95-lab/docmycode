@@ -1,6 +1,8 @@
 import bcrypt from 'bcrypt';
 import { NextApiRequest, NextApiResponse } from 'next';
 import prismadb from '@/lib/prismadb';
+import { Prisma } from '@prisma/client';
+
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -29,8 +31,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         hashedPassword,
         image: '',
         emailVerified: new Date(),
-      }
+        requestsToday: 0, // Set default value for requestsToday
+        lastRequestDate: new Date(), // Set default value for lastRequestDate
+      } 
     })
+    
 
     return res.status(200).json(user);
   } catch (error) {
